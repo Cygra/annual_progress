@@ -24,17 +24,16 @@
     var begin = Date.parse("Jan 1, 2019")
     var end = Date.parse("Jan 1, 2020")
     var now = Date.now()
-    var percent = ((now - begin) / (end - begin))
-    var rowNumber = percent.toString().split("")[2]
-    var colNumber = (percent * 100) - Number(rowNumber) * 10
+    var percent = ((now - begin) / (end - begin)) * 10
+    var rowNumber = Math.floor(percent)
     var row = document.createElement("div")
     row.className = "row"
     var col = document.createElement("div")
     col.className = "col"
-    col.style.width = (colNumber * 10).toString() + "%"
+    col.style.width = ((percent - rowNumber) * 100).toString() + "%"
     for (var i = 0; i < rowNumber; i ++) document.body.appendChild(row)
     document.body.appendChild(col)
-    var title = (percent * 100).toFixed(2) + "%"
+    var title = (percent * 10).toFixed(2) + "%"
     document.title = title
     var span = document.createElement("span")
     span.innerHTML = title + " of 2019 has already passed..."

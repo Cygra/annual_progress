@@ -2,12 +2,31 @@
   background-color: #282c34;
   height: 100%;
   position: absolute;
-}
+  overflow: hidden;
 
-.progress-display {
-  position: absolute;
-  right: 1px;
-  top: 50%;
-  bottom: 50%;
-  color: aliceblue;
+  .progress-display {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    bottom: 50%;
+    color: aliceblue;
+  }
+
+  .ripple-pond {
+    position: absolute;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+
+    width: 1000px;
+    height: 1000px;
+    transform: scale(0);
+    opacity: 1;
+
+    &.rippling {
+      transform: scale(1);
+      opacity: 0;
+      transition: all 2s;
+    }
+  }
 }

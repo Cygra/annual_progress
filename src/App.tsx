@@ -8,7 +8,7 @@ const App: React.FC = () => {
   useEffect(() => {
     document.title = getProgressDisplay(getProgress(), 2);
     const interval = setInterval(
-      setProgress.bind(undefined, getProgress()),
+      setProgress.bind(undefined, () => getProgress()),
       100
     );
     return () => clearInterval(interval);

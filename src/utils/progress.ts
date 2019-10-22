@@ -7,6 +7,6 @@ export const getProgress = () => {
   return (currentMilliSeconds - startOfYear) / (endOfYear - startOfYear);
 };
 
-export const getProgressDisplay = (progress: number): string => {
-  return `${(progress * 100).toFixed(7)}%`;
+export const getProgressDisplay = (progress: number, fix?: number): string => {
+  return `${(progress * 100).toFixed(fix || 7)}%`;
 };

@@ -12,7 +12,7 @@ const App: React.FC = () => {
       100
     );
     return () => clearInterval(interval);
-  });
+  }, []);
   return (
     <div className="App">
       <Basic progress={progress} />
